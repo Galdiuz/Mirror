@@ -70,7 +70,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script>apikey = "<?php include("apikey.php"); ?>";</script>
+    <script>apikey = "<?php include("../apikey.php"); ?>";</script>
     <script src="js/time.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/skycons.js"></script>
