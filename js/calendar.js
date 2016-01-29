@@ -55,6 +55,9 @@
         html += "</table>";
         $("#calendar").html(html);
 
-        setTimeout(update, 5000);
+        var next = (23 - now.getHours()) * 60 * 60 * 1000 +
+                (59 - now.getMinutes()) * 60 * 1000 +
+                (59 - now.getSeconds()) * 1000;
+        setTimeout(update, next);
     }
 })();

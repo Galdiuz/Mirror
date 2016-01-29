@@ -3,10 +3,10 @@
 
     function readFile() {
         $.post("php/readFile.php", function(text) {
-            text = text.replace("&lt;img src=&quot;", "<img src=\"");
-            text = text.replace("&quot;&gt;&lt;/img&gt;", "\"></img>");
+            text = text.replace(/&lt;img src=&quot;/g, "<img src=\"");
+            text = text.replace(/&quot;&gt;&lt;\/img&gt;/g, "\"></img>");
             $("#file").html(text);
         });
-        setTimeout(readFile, 5000);
+        setTimeout(readFile, 15000);
     }
 })();
