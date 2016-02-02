@@ -135,6 +135,9 @@ function translate(s) {
         case "clear sky":
             return "Klart";
             break;
+		case "sky is clear":
+			return "Klart"
+			break;
         case "few clouds":
             return "Nästan klart";
             break;
