@@ -1,6 +1,20 @@
 downloading = false;
 getImages();
 
+function imageFromURL(url) {
+    if(!downloading) {
+        downloading = true;
+        $("#urltextbox").val("");
+        var id = 0;
+        $("#progress").append("<div id='pdiv" + id + "' class='progressdiv'><span class='progressname'>" + url + "</span><span id='pn" + id + "' class='progressbar'>0%</span></div>");
+        $.post("php/downloadImage.php", {url: url}, function(data) {
+            addImage(data);
+            $("#pdiv" + id).remove();
+            downloading = false;
+        });
+    }
+}
+
 function getImages() {
     $.post("php/getImages.php", function(json) {
             images = JSON.parse(json);
