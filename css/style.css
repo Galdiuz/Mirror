@@ -5,6 +5,9 @@ body {
 	color: #FFF;
 	font-family: 'Open Sans', sans-serif;
 	padding: 4px;
+}
+
+.mirror {
 	width: 1072px;
 	height: 1912px;
 }
@@ -59,7 +62,7 @@ body {
 	font-size: 12px;
 	width: 14px;
 	color: #cccccc;
-	padding-right: 0px;
+	padding-right: 1px;
 }
 
 #calendar .today {
@@ -120,16 +123,25 @@ body {
 	height: 100px;
 }
 
+#bottom {
+	position: absolute;
+	bottom: 48px;
+	width: 800px;
+	left: 50%;
+	margin-left: -400px;
+}
 
 #file {
 	font-size: 48px;
 	white-space: pre-line;
-	position: absolute;
-	bottom: 5%;
-	width: 800px;
-	left: 50%;
-	margin-left: -400px;
 	text-align: center;
+	margin-bottom: 24px;
+}
+
+#slideshow img{
+	width: 800px;
+	height: 600px;
+	object-fit: contain;
 }
 
 .gray {
@@ -142,6 +154,79 @@ body {
 	resize: none;
 }
 
+#box {
+	width: 300px;
+	height: 200px;
+	background: gray;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+	position: relative;
+}
 
+#box span {
+	display: block;
+}
 
+#url {
+	margin-top: 12px;
+	margin-bottom: 24px;
+}
+
+#fileinput {
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+	bottom: 0;
+    opacity: 0;
+    z-index: 1;
+    width: 300px;
+	height: 200px;
+    overflow: hidden;
+}
+
+#progress{
+	margin-top: 12px;
+	width: 800px;
+	height: 150px;
+	overflow-y: auto;
+}
+
+.progressdiv {
+	padding: 4px;
+	border: thin white solid;
+}
+
+.progressname {
+}
+
+.progressbar {
+	float: right;
+}
+
+.imagebox {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	height: 250px;
+	margin-top: 12px;
+	margin-right: 12px;
+	border: thin solid gray;
+}
+
+.imagebox img {
+	width: 300px;
+	height: 250px;
+	object-fit: cover;
+}
+
+.imagebox input {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 60px;
+	height: 60px;
+	
+}
 

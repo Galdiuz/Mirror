@@ -3,6 +3,7 @@ $(document).ready(function() {
     calendar.init();
     weather.init();
     file.init();
+    slideshow.init();
 
     resizeCanvas($("#clock"));
     resizeCanvas($("#current-dir"));

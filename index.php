@@ -7,7 +7,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="mirror">
     <div id="content">
         <div id="datetime">
             <canvas id="clock"></canvas>
@@ -65,8 +65,11 @@
                 </div>
             </div>
         </div>
-        
-        <div id="file"></div>
+
+        <div id="bottom">
+            <div id="file"></div>
+            <div id="slideshow"></div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -77,6 +80,7 @@
     <script src="js/translate.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/file.js"></script>
+    <script src="js/slideshow.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
