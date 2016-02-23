@@ -37,7 +37,7 @@ body {
 #calendar table {
 	margin: 0 auto;
 	border-spacing: 0px 2px;
-    border-collapse: separate;
+	border-collapse: separate;
 }
 
 #calendar .month {
@@ -175,15 +175,15 @@ body {
 
 #fileinput {
 	position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+	left: 0;
+	right: 0;
+	top: 0;
 	bottom: 0;
-    opacity: 0;
-    z-index: 1;
-    width: 300px;
+	opacity: 0;
+	z-index: 1;
+	width: 300px;
 	height: 200px;
-    overflow: hidden;
+	overflow: hidden;
 }
 
 #progress{
