@@ -141,7 +141,7 @@ body {
 #slideshow img{
 	width: 800px;
 	height: 600px;
-	object-fit: contain;
+	object-fit: scale-down;
 }
 
 .gray {
