@@ -13,12 +13,7 @@ if (!file_exists($thumbpath)) {
     mkdir($thumbpath, 0777, true);
 }
 
-
-if(move_uploaded_file($file['tmp_name'], $path . $file['name'])) {
+if (move_uploaded_file($file['tmp_name'], $path . $file['name'])) {
     makeThumbnail($path . $file['name'], $thumbpath . $file['name']);
     echo $file['name'];
 }
-
-
-
-?>

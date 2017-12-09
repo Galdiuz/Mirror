@@ -6,7 +6,7 @@ function makeThumbnail($img, $dst) {
     $ow = $imgdetails[0];
     $oh = $imgdetails[1];
     $perc = $height / $width;
-    if($ow * $perc > $oh) {
+    if ($ow * $perc > $oh) {
         $nw = intval($ow * $height / $oh);
         $nh = $height;
     }
@@ -17,17 +17,16 @@ function makeThumbnail($img, $dst) {
     $dest_x = intval(($width - $nw) / 2);
     $dest_y = intval(($height - $nh) / 2);
 
+    $imgt = null;
     if ($imgdetails[2] == 1) {
-        $imgt = "ImageGIF";
-        $createfrom = "ImageCreateFromGIF";
-    }
-    if ($imgdetails[2] == 2) {
-        $imgt = "ImageJPEG";
-        $createfrom = "ImageCreateFromJPEG";
-    }
-    if ($imgdetails[2] == 3) {
-        $imgt = "ImagePNG";
-        $createfrom = "ImageCreateFromPNG";
+        $imgt = "imagegif";
+        $createfrom = "imagecreatefromgif";
+    } elseif ($imgdetails[2] == 2) {
+        $imgt = "imagejpeg";
+        $createfrom = "imagecreatefromjpeg";
+    } elseif ($imgdetails[2] == 3) {
+        $imgt = "imagepng";
+        $createfrom = "imagecreatefrompng";
     }
     if ($imgt) {
         $old_image = $createfrom($img);
@@ -36,4 +35,3 @@ function makeThumbnail($img, $dst) {
         $imgt($new_image, $dst);
     }
 }
-?>
