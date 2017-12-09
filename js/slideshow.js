@@ -1,20 +1,24 @@
 (function(){
     window.slideshow.init = slideshow;
-    var current = 0;
+    var current = -1;
 
     function slideshow() {
         $.post("php/getImages.php", function(json) {
             images = JSON.parse(json);
-            if(images.length == 0) {
+            if (images.length == 0) {
                 $("#slideshow").html("");
+
+                return;
             }
-            else {
-                if(current >= images.length) {
-                    current = 0;
-                }
-                $("#slideshow").html("<img src='/images/" + images[current] + "'>");
-                current++;
+
+            if (current >= images.length) {
+                current = 0;
+            } else if (current == -1) {
+                current = Math.floor(Math.random() * images.length);
             }
+
+            $("#slideshow").html("<img src='/images/" + images[current] + "'>");
+            current++;
         });
         setTimeout(slideshow, 15000)
     }
