@@ -4,7 +4,22 @@
     var skycons;
 
     function init() {
-        skycons = new Skycons({"color": "white"});
+        var color = {
+            sun: "#FFA",
+            moon: "#FFD",
+            light_cloud: "#DDD",
+            cloud: "#BBB",
+            dark_cloud: "#888",
+            rain: "#66F",
+            snow: "#FFF",
+            thunder: "#FF0",
+            wind: "#CFC",
+            leaf: "#080",
+            hail: "#CCF",
+            sleet: "#CCF",
+            fog: "#DDD"
+        };
+        skycons = new Skycons({color: color});
         skycons.play();
         update();
     }
@@ -84,7 +99,7 @@
         }
     }
 
-	function iconDay(id) {
+    function iconDay(id) {
         var icons = new Array();
 
         icons[200] = Skycons.THUNDER_RAIN;
