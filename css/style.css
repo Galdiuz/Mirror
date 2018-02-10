@@ -70,6 +70,10 @@ body {
 	width: 30px;
 }
 
+#calendar .red {
+	color: #FF8888;
+}
+
 #weather {
 	position: absolute;
 	top: 0px;

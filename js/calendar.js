@@ -10,9 +10,22 @@
         update();
     }
 
-    function update() {
+    function update(days = null) {
         var now = new Date();
-        if(now.toDateString() == date.toDateString()) return;
+        if (now.toDateString() == date.toDateString()) {
+            return;
+        };
+
+        if (days === null) {
+            $.get(
+                "http://api.dryg.net/dagar/v2.1/" + now.getFullYear() + "/" + (now.getMonth() + 1),
+                function(data) {
+                    update(data.dagar);
+                }
+            );
+
+            return;
+        }
 
         var html = "<table>";
         html += "<tr><td class='week'></td>";
@@ -30,25 +43,36 @@
 
         var day = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
         var weekday = day.getDay() - 1;
-        if(weekday <= 0) { weekday += 7; }
+        if (weekday <= 0) { weekday += 7; }
         day.setDate(-weekday);
 
-        for(var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++) {
             html += "<tr>";
 			html += "<td class='week'>" + (day.getWeek() + 1) + "</td>";
-            for(var j = 0; j < 7; j++) {
+            for (var j = 0; j < 7; j++) {
                 day.setDate(day.getDate() + 1);
-                if(day.getMonth() == now.getMonth()) {
-                    if(day.getDate() == now.getDate()) {
-                        html += "<td class='today'>";
+                var classes = [];
+
+                if (day.getMonth() == now.getMonth()) {
+                    if (day.getDate() == now.getDate()) {
+                        classes.push('today');
                     }
-                    else {
-                        html += "<td>";
+
+                    if (days[day.getDate() - 1]['röd dag'] == 'Ja') {
+                        classes.push('red');
                     }
                 }
                 else {
-                    html += "<td class='gray'>";
+                    classes.push('gray');
                 }
+
+                if (classes) {
+                    classes = " class='" + classes.join(' ') + "'";
+                } else {
+                    classes = "";
+                }
+
+                html += "<td" + classes + ">";
                 html += day.getDate().toString() + "</td>";
             }
             html += "</tr>"
