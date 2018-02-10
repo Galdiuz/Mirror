@@ -35,7 +35,7 @@ body {
 }
 
 #calendar table {
-	margin: 0 auto;
+	margin: 0 auto 5;
 	border-spacing: 0px 2px;
 	border-collapse: separate;
 }
@@ -72,6 +72,10 @@ body {
 
 #calendar .red {
 	color: #FF8888;
+}
+
+#calendar p {
+    font-size: 20px;
 }
 
 #weather {

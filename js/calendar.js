@@ -78,6 +78,15 @@
             html += "</tr>"
         }
         html += "</table>";
+
+        for (var i = 0; i < days.length; i++) {
+            if (days[i]['helgdag']) {
+                html += '<p>';
+                html += (i + 1) + ': ' + days[i]['helgdag'];
+                html += '</p>';
+            }
+        }
+
         $("#calendar").html(html);
 
         var next = (23 - now.getHours()) * 60 * 60 * 1000 +
