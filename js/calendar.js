@@ -18,7 +18,7 @@
 
         if (days === null) {
             $.get(
-                "http://api.dryg.net/dagar/v2.1/" + now.getFullYear() + "/" + (now.getMonth() + 1),
+                "https://api.dryg.net/dagar/v2.1/" + now.getFullYear() + "/" + (now.getMonth() + 1),
                 function(data) {
                     update(data.dagar);
                 }
